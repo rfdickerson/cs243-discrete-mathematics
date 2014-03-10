@@ -1,0 +1,97 @@
+%---------change this every homework
+\def\yourname{Harry Potter}
+% -----------------------------------------------------
+\def\homework{0} % 0 for solution, 1 for problem-set only
+\def\duedate{tues mar 18, 2014}
+\def\duelocation{}
+\def\hnumber{4}
+\def\prof{Prof. Dickerson}
+\def\course{cs243 - discrete - s'14}%-------------------------------------
+%-------------------------------------
+
+\documentclass[10pt]{article}
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\usepackage[osf]{mathpazo}
+\usepackage{amsmath,amsfonts,graphicx}
+\usepackage{latexsym}
+\usepackage[top=1in,bottom=1.4in,left=1.5in,right=1.5in,centering]{geometry}
+\usepackage{color}
+\definecolor{mdb}{rgb}{0.3,0.02,0.02} 
+\definecolor{cit}{rgb}{0.05,0.2,0.45} 
+\pagestyle{myheadings}
+\markboth{\yourname}{\yourname}
+\usepackage{clrscode}
+
+
+\newenvironment{proof}{\par\noindent{\it Proof.}\hspace*{1em}}{$\Box$\bigskip}
+\newcommand{\qed}{$\Box$}
+\newcommand{\alg}[1]{\mathsf{#1}}
+\newcommand{\handout}{
+   \renewcommand{\thepage}{H\hnumber-\arabic{page}}
+   \noindent
+   \begin{center}
+      \vbox{
+    \hbox to \columnwidth {\sc{\course} --- \prof \hfill}
+    \vspace{-2mm}
+    \hbox to \columnwidth {\sc due \MakeLowercase{\duedate} \duelocation\hfill {\Huge\color{mdb}H\hnumber.}}
+	\vspace{15pt}
+	{\Huge\yourname}
+      }
+   \end{center}
+   \vspace*{2mm}
+}
+\newcommand{\solution}[1]{\medskip\noindent\textbf{Solution:}#1}
+\newcommand{\bit}[1]{\{0,1\}^{ #1 }}
+%\dontprintsemicolon
+%\linesnumbered
+\newtheorem{problem}{\sc\color{cit}problem}
+\newtheorem{practice}{\sc\color{cit}practice}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\thispagestyle{empty}
+\handout
+
+\begin{enumerate}
+
+\item (12 points)
+For each of these partial sequences of integers, determine the next term of 
+the sequence, and then provide a general formula or rule to generates terms of the
+sequence.
+\begin{enumerate}
+\item $3, 4, 7, 12, 19, 28, 39, 52, 67, 84, 103, \ldots$
+\item $7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57, \ldots$
+\item $1, 2, 2, 2, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, \ldots$
+\item $3, 9, 81, 6561, 43046721 \ldots$
+\end{enumerate}
+
+\item(4 points) Compute each of these double sums.
+\begin{enumerate}
+\item $\sum_{i=1}^2\sum_{j=2}^4(i+j/2)$
+\item $\sum_{i=0}^2\sum_{j=0}^3(3i+2j)$
+\item $\sum_{i=1}^3\sum_{j=0}^2 i$
+\item $\sum_{i=0}^2\sum_{j=1}^3 i^2j$
+\end{enumerate}
+
+\item(6 points) Compute each of these sums.
+\begin{enumerate}
+\item $\sum_{i=0}^n 5^{i+1}-5^i$
+\item $\sum_{i=0}^{2n} (-3)^i$  (hint: split series in two parts)
+\end{enumerate}
+
+\item Consider the series $\sum_{k=2}^{2n+1}\frac{2}{k^2-1}.$
+\begin{enumerate}
+\item (4 points) Write the series as a telescoping series.
+\item (6 points) show 
+$$\sum_{k=2}^{2n+1}\frac{2}{k^2-1}= \frac{3}{2}-\frac{1}{2n+1}-\frac{1}{2n+2}$$
+Hint: write out at least the first six terms and the last two terms, and group them in pairs of two.
+\end{enumerate}
+
+\item (8 points) Prove by induction that $\sum_{i=1}^ni^2=\frac{1}{6}n(n+1)(2n+1)$.
+ 
+\end{enumerate}
+
+
+
+\end{document}
