@@ -11,6 +11,9 @@ tmp/
 *.bak
 *.swp
 *~.nib
+*.aux
+*.out
+*.synctex.gz
 local.properties
 .classpath
 .settings/
