@@ -1,0 +1,99 @@
+%---------change this every homework
+\def\yourname{Ronald Weasley}
+% -----------------------------------------------------
+\def\homework{0} % 0 for solution, 1 for problem-set only
+\def\duedate{tues mar 31, 2014}
+\def\duelocation{}
+\def\hnumber{5}
+\def\prof{Prof. Dickerson}
+\def\course{cs243 - discrete - s'14}%-------------------------------------
+%-------------------------------------
+
+\documentclass[10pt]{article}
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\usepackage[osf]{mathpazo}
+\usepackage{amsmath,amsfonts,graphicx}
+\usepackage{latexsym}
+\usepackage[top=1in,bottom=1.4in,left=1.5in,right=1.5in,centering]{geometry}
+\usepackage{color}
+\definecolor{mdb}{rgb}{0.3,0.02,0.02} 
+\definecolor{cit}{rgb}{0.05,0.2,0.45} 
+\pagestyle{myheadings}
+\markboth{\yourname}{\yourname}
+\usepackage{clrscode}
+
+
+\newenvironment{proof}{\par\noindent{\it Proof.}\hspace*{1em}}{$\Box$\bigskip}
+\newcommand{\qed}{$\Box$}
+\newcommand{\alg}[1]{\mathsf{#1}}
+\newcommand{\handout}{
+   \renewcommand{\thepage}{H\hnumber-\arabic{page}}
+   \noindent
+   \begin{center}
+      \vbox{
+    \hbox to \columnwidth {\sc{\course} --- \prof \hfill}
+    \vspace{-2mm}
+    \hbox to \columnwidth {\sc due \MakeLowercase{\duedate} \duelocation\hfill {\Huge\color{mdb}H\hnumber.}}
+	\vspace{15pt}
+	{\Huge\yourname}
+      }
+   \end{center}
+   \vspace*{2mm}
+}
+\newcommand{\solution}[1]{\medskip\noindent\textbf{Solution:}#1}
+\newcommand{\bit}[1]{\{0,1\}^{ #1 }}
+%\dontprintsemicolon
+%\linesnumbered
+\newtheorem{problem}{\sc\color{cit}problem}
+\newtheorem{practice}{\sc\color{cit}practice}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\thispagestyle{empty}
+\handout
+
+\begin{enumerate}
+
+\item (10 points) Arrange the functions 
+$$3^n, 2^n, n 2^n,  n^{30}, (\log n)^3, \sqrt{n}\log^2 n, n\log n, \sqrt{n!}, n^{29}+n^{28}, n^{\sqrt{n}}$$
+into increasing order of growth rates.
+
+\item (10 points) 
+To solve a particular problem you have access to two algorithms. 
+The execution time of the first algorithm can be given as a function of the
+input size $n$ as $f(n) = n^{1.5} \log^2 n$.
+The execution time of the second algorithm is similarly: $g(n) = n^2$.
+Which algorithm is faster asymptotically?
+Is this algorithm faster for small $n$?
+Find the minimum problem size $n$ needed so that the fastest asymptotic 
+algorithm becomes faster than the other one.
+Hint: limit your search in powers of 2. You may use calculators to help you
+but the answer must self contained.
+
+\item (10 points) 
+What is the largest problem size $n$ that we can solve in no more than 
+{\bf  one hour} using an algorithm that requires $f(n)$ operations, 
+where each operation takes $10^{-9}$ seconds (this is close to a today's computer), 
+with the following $f(n)$?
+\begin{enumerate}
+\item $\log_2 n$
+\item $\log^5_2 n$
+\item $4n$
+\item $2n\log_2 n$
+\item $\frac{n}{2}\log^2_2 n$
+\item $n^2$
+\item $(n/2)^3$
+\item $2^n$
+\item $n!$
+\item $n^n$
+\end{enumerate}
+
+\item (10 points) Use pseudocode to describe an algorithm that determines whether a given function from a finite set to another finite set is one-to-one.
+
+Hint: You may assume that the domain is $A=\{a_1,\ldots,a_m\}$ and the co-domain is $B=\{b_1,\ldots,b_n\}$. The function $f: A\rightarrow B$ is given as a set of pairs $\{(a_i,f(a_i))|\forall a_i\in A\}$.
+
+\end{enumerate}
+
+
+\end{document}
